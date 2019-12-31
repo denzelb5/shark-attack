@@ -20,9 +20,8 @@ class Student extends React.Component {
       <div className="card col-3">
         <div className="card-body">
           <h5 className="card-title">{student.firstName}</h5>
-          <p className="card-text">{student.lastName}</p>
-          <p>{student.isDead}</p>
-          <div className="btn" onClick={this.deadStudentEvent}>Attack</div>
+          <h5 className="card-title">{student.lastName}</h5>
+          {/* <div className="btn" onClick={this.deadStudentEvent}>Attack</div> */}
         </div>
       </div>
     );

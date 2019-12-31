@@ -10,6 +10,11 @@ class SharkTank extends React.Component {
     deadStudent: PropTypes.func,
   }
 
+  deadStudentEvent = (e) => {
+    const { deadStudent } = this.props;
+    deadStudent();
+  }
+
   render() {
     const myStudents = this.props.students;
     const { deadStudent } = this.props;
@@ -17,7 +22,10 @@ class SharkTank extends React.Component {
     const studentCards = myStudents.map((student) => <Student key={student.id} student={student} deadStudent={deadStudent} />);
 
     return (
-      <div className="d-flex flex-wrap sharkTank">{studentCards}</div>
+      <div className="d-flex flex-wrap sharkTank">
+        {studentCards}
+        <button className="btn btn-danger" onClick={this.deadStudentEvent}>Shark Attack</button>
+      </div>
     );
   }
 }

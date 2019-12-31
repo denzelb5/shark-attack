@@ -9,20 +9,22 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const students = studentData.getStudents();
-    this.setState({ students });
+    const students = studentData.livingStudents();
+    const sharkBait = studentData.dearlyBeloved();
+    this.setState({ students, sharkBait });
   }
 
-  deadStudent = (studentId) => {
-    studentData.killAStudent(studentId);
-    const students = studentData.getStudents();
-    this.setState({ students });
+  deadStudent = () => {
+    studentData.randomVictims();
+    const students = studentData.livingStudents();
+    const sharkBait = studentData.dearlyBeloved();
+    this.setState({ students, sharkBait });
   }
 
   render() {
     return (
       <div className="App">
-      <button className="btn btn-warning">WTF</button>
+      <h1>Shark Attack</h1>
       <SharkTank students={this.state.students} deadStudent={this.deadStudent} />
       </div>
     );

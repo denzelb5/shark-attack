@@ -141,12 +141,16 @@ const students = [
 
 const getStudents = () => students;
 
-const killAStudent = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isBusy = false;
-    }
-  });
+const livingStudents = () => students.filter((student) => !student.isDead);
+const dearlyBeloved = () => students.filter((student) => student.isDead);
+const randomVictims = () => {
+  const randomVictim = livingStudents()[Math.floor(Math.random() * livingStudents().length)];
+  randomVictim.isDead = true;
 };
 
-export default { getStudents, killAStudent };
+export default {
+  getStudents,
+  livingStudents,
+  dearlyBeloved,
+  randomVictims,
+};
