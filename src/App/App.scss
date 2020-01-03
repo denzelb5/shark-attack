@@ -1,6 +1,15 @@
 .App {
+  background-image: url('http://pngimg.com/uploads/sea/sea_PNG15.png');
   text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
+
+// .title {
+//   background-image: url('http://pngimg.com/uploads/shark/shark_PNG18832.png');
+// }
 
 .App-logo {
   height: 40vmin;
